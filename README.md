@@ -1,7 +1,7 @@
 # .dotfiles
 minhas configs
 
-ainda sendo atualizado :)
+ainda sendo atualizado :) (desatualizado por enquanto)
 
 tema: [tokyo night](https://www.xfce-look.org/p/1681315)
 
