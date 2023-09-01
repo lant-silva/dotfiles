@@ -6,8 +6,13 @@ source $ZSH/oh-my-zsh.sh
 
 alias editzsh="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
-alias pi="sudo pacman -S"
-alias ps="sudo pacman -Ss"
-alias pupd"sudo pacman -Syu"
-alias yi="yay -S"
-alias ys="yay -Ss"
+
+# para arch linux
+alias yupdate="sudo pacman -Syu"
+alias yinstall="yay -S"
+alias ysearch="yay -Ss"
+
+# para debian/ubuntu
+alias ainstall="sudo apt install -y"
+alias asearch="sudo apt search"
+alias aupdate="sudo apt update"
