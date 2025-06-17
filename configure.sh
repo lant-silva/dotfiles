@@ -37,8 +37,13 @@ else
 fi
 rm
 
+# installing fonts
+git clone https://github.com/ryanoasis/nerd-fonts.git
+
+nerd-fonts/install.sh
+
 # moving config files
-cp alacritty $HOME/.config
+mv alacritty $HOME/.config
 cp rofi $HOME/.config
 chmod +x $HOME/.config/rofi/launchers/type-4/launcher.sh
 cp neofetch $HOME/.config
@@ -64,7 +69,7 @@ if [[ "$DE" = *xfce* ]]; then
 fi
 
 # final step: installing oh my zsh
-mv ./zsh/.zshrc $HOME
+mv zsh/.zshrc $HOME
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 echo installing ohmyzsh now 
 sh ./install.sh
