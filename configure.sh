@@ -4,12 +4,6 @@
 # this was mostly intended to be used in xfce (but works normally in other desktop environments), and in distros based in arch or debian, so i didn't planned it to be useable in other distros, sorry :(
 # WARNING: THIS IS A WORK IN PROGRESS, USE IT AT YOUR OWN RISK
 
-# verify if user is running as sudo (for installing purposes)
-if [ "$EUID" -ne 0 ]; then
-  echo "run this script as sudo"
-  exit 1
-fi
-
 DE=`echo "$XDG_CURRENT_DESKTOP" | tr '[:upper:]' '[:lower:]'` 
 
 # detecting current installed system base
@@ -42,14 +36,14 @@ else
 fi
 
 # moving config files
-mv alacritty/alacritty.toml $HOME/.config/alacritty
-mv rofi $HOME/.config
+cp alacritty/alacritty.toml $HOME/.config/alacritty
+cp rofi $HOME/.config
 chmod +x $HOME/.config/rofi/launchers/type-4/launcher.sh
 
 # ignore commands if using another desktop other than xfce
 if [[ "$DE" = *xfce* ]]; then
     #testing purposes
-    echo user is using xfce (good)
+    echo user is using xfce
 
     #moves xfce custom css theme to its dir
     if [ ! -d "$HOME/.config/gtk-3.0" ]; then
