@@ -19,9 +19,11 @@ fi
 # installing programs
 if [[ "$pkginstaller" = *apt* ]]; then
     sudo add-apt-repository ppa:mmstick76/alacritty
-    $pkginstaller alacritty zsh rofi gtk2-engines-murrine neofetch
+    sudo add-apt-repository ppa:papirus/papirus
+    sudo apt update
+    $pkginstaller alacritty zsh rofi gtk2-engines-murrine neofetch papirus-icon-theme
 else
-    $pkginstaller alacritty zsh rofi gtk-engine-murrine neofetch
+    $pkginstaller alacritty zsh rofi gtk-engine-murrine neofetch papirus-icon-theme
 fi
 
 # installing the main theme
@@ -34,6 +36,7 @@ if [ $? -eq 0 ]; then
 else
     echo "unexpected error while installing theme"
 fi
+rm
 
 # moving config files
 cp alacritty $HOME/.config
@@ -65,7 +68,7 @@ fi
 cd /tmp
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 echo installing ohmyzsh now 
-sudo ./install.sh
+sh ./install.sh
 mv ./zsh/.zshrc $HOME
 
 echo done :D
