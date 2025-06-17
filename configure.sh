@@ -23,7 +23,7 @@ else
 fi
 
 # installing programs
-if [[ "$pkginstaller" = *apt*]]; then
+if [[ "$pkginstaller" = *apt* ]]; then
     sudo add-apt-repository ppa:mmstick76/alacritty
     $pkginstaller alacritty zsh rofi gtk2-engines-murrine neofetch
 else
