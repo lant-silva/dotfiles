@@ -28,7 +28,6 @@ fi
 
 # installing the main theme
 # this is mostly personal choice, as i really like Fausto-Korpsvart's tokyonight theme for gtk
-cd /tmp 
 git clone https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme.git && cd Tokyonight-GTK-Theme/themes
 ./install.sh
 if [ $? -eq 0 ]; then
@@ -65,10 +64,9 @@ if [[ "$DE" = *xfce* ]]; then
 fi
 
 # final step: installing oh my zsh
-cd /tmp
+mv ./zsh/.zshrc $HOME
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 echo installing ohmyzsh now 
 sh ./install.sh
-mv ./zsh/.zshrc $HOME
 
 echo done :D
