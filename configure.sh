@@ -36,9 +36,11 @@ else
 fi
 
 # moving config files
-cp alacritty/alacritty.toml $HOME/.config/alacritty
+cp alacritty $HOME/.config
 cp rofi $HOME/.config
 chmod +x $HOME/.config/rofi/launchers/type-4/launcher.sh
+cp neofetch $HOME/.config
+
 
 # ignore commands if using another desktop other than xfce
 if [[ "$DE" = *xfce* ]]; then
@@ -49,7 +51,7 @@ if [[ "$DE" = *xfce* ]]; then
     if [ ! -d "$HOME/.config/gtk-3.0" ]; then
         mkdir $HOME/.config/gtk-3.0
     fi
-    mv gtk-3.0/gtk.css $HOME/.config
+    mv ./gtk-3.0/gtk.css $HOME/.config
 
     # configure main personal keyboard hotkeys
     # rofi launcher
@@ -62,7 +64,8 @@ fi
 # final step: installing oh my zsh
 cd /tmp
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-./install.sh
-mv zsh/.zshrc $HOME
+echo installing ohmyzsh now 
+sudo ./install.sh
+mv ./zsh/.zshrc $HOME
 
 echo done :D
